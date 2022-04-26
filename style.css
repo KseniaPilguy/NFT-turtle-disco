@@ -1,0 +1,114 @@
+body { 
+  max-width: 1400px;
+  margin: 0 auto !important;
+  position: relative;
+}
+
+.floor {
+  background-image: url('./floor.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  animation: discoColors 1s 8.5s infinite ease-in-out;
+}
+
+.names {
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.floor .turtles {
+  display: flex;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gap {
+  width: 250px;
+}
+
+.circle {
+  position: absolute;
+}
+
+.floor h1 {
+  font-family: 'Water Brush', cursive;
+  color: #ff39ff;
+  font-size: 70px;
+  text-align: center;
+
+  padding: 20px;
+  background-color: #03a9f426;
+  width: 40%;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 140px;
+}
+
+.floor h1::after {
+  content: "Ksyu#2813";
+  font-family: 'Water Brush', cursive;
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+}
+
+.floor h1 span{
+  color: #8db95c;
+}
+
+.floor h2 {
+  font-family: 'Inconsolata', monospace;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.floor .controls {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
+
+.buttons {
+  margin-top: 30px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 325px;
+  animation: sharMove 10s ease-in-out;
+}
+
+
+
+
+
+@keyframes discoColors {
+	from {background-color: lavenderblush}
+	20% {background-color: #fff0f0}
+  40% {background-color: #f1f0ff}
+  60% {background-color: #f0fffd}
+  80% {background-color: #f5fff0}
+	to {background-color: lavenderblush}
+}
+
+@keyframes sharMove {
+	from { top: 65px;}
+	to { top: 325px;}
+}
+

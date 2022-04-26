@@ -1,0 +1,663 @@
+
+ * {
+	 box-sizing: border-box;
+	 line-height: 1;
+}
+ main {
+	 align-items: flex-start;
+	 display: flex;
+	 flex-flow: row wrap;
+	 height: 100vh;
+	 justify-content: center;
+	 overflow: hidden;
+	 width: 100vw;
+}
+ @media only screen and (min-width: 767px) {
+	 main {
+		 display: grid;
+		 grid-template-columns: repeat(4, 1fr);
+	}
+}
+ .turtle-wrap {
+	 display: flex;
+	 width: 100%;
+	 justify-content: center;
+}
+ @media only screen and (min-width: 767px) {
+	 .turtle-wrap {
+		 grid-column: -1;
+	}
+}
+ .turtle-wrap {
+	 height: 100%;
+}
+ @media only screen and (min-width: 767px) {
+	 .turtle-wrap {
+		 display: grid;
+		 grid-template-columns: repeat(4, 1fr);
+	}
+}
+ article {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 min-height: 50vh;
+	 position: relative;
+}
+ article::after {
+	 position: absolute;
+	 top: 24px;
+	 right: 0;
+	 left: 0;
+	 content: "";
+	 display: flex;
+	 font-size: 30px;
+	 justify-content: center;
+	 margin: auto;
+	 text-shadow: -2px 0 14px #fff;
+	 width: 100%;
+}
+ @media only screen and (min-width: 767px) {
+	 article {
+		 min-height: unset;
+	}
+}
+ .turtle {
+	 position: relative;
+	 width: 152px;
+	 margin: 0 20px;
+}
+ .head {
+	 position: relative;
+	 top: 28px;
+	 right: 0;
+	 left: 0;
+	 background-color: #8db95d;
+	 box-shadow: inset 18px 1px 6px 0px rgba(30, 31, 38, 0.25);
+	 height: 100px;
+	 margin: auto;
+	 overflow: hidden;
+	 width: 100px;
+	 z-index: 5;
+}
+ .head::after {
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 box-shadow: inset -12px 1px 6px -4px rgba(166, 214, 140, 0.25);
+	 content: "";
+	 mix-blend-mode: difference;
+	 width: 100%;
+	 height: 100%;
+	 border-radius: 50%;
+	 overflow: hidden;
+	 transform: rotate(-20deg);
+}
+ .head, .eye {
+	 border-radius: 50%;
+}
+ .stiches {
+	 position: absolute;
+	 top: 6px;
+	 left: 15px;
+	 border: 2px solid #446b4f;
+	 border-left: 0;
+	 height: 20px;
+	 transform: rotate(45deg);
+	 width: 18px;
+}
+ .stiches .stich {
+	 background-color: #446b4f;
+	 display: block;
+	 height: 6px;
+	 position: absolute;
+	 width: 1px;
+}
+ .stiches .stich:nth-of-type(1), .stiches .stich:nth-of-type(2) {
+	 transform: rotate(-180deg);
+	 top: -3px;
+}
+ .stiches .stich:nth-of-type(1) {
+	 left: 9px;
+}
+ .stiches .stich:nth-of-type(2) {
+	 left: 12px;
+}
+ .stiches .stich:nth-of-type(3), .stiches .stich:nth-of-type(4), .stiches .stich:nth-of-type(5) {
+	 left: 17px;
+	 transform: rotate(85deg);
+}
+ .stiches .stich:nth-of-type(3) {
+	 top: 0;
+}
+ .stiches .stich:nth-of-type(4) {
+	 top: 5px;
+}
+ .stiches .stich:nth-of-type(5) {
+	 top: 10px;
+}
+ .stiches .stich:nth-of-type(6), .stiches .stich:nth-of-type(7) {
+	 top: 15px;
+}
+ .stiches .stich:nth-of-type(6) {
+	 left: 9px;
+}
+ .stiches .stich:nth-of-type(7) {
+	 left: 12px;
+}
+ .bandana {
+	 position: absolute;
+	 top: 32px;
+	 right: 0;
+	 border-radius: 12px;
+	 height: 32px;
+	 width: 100%;
+}
+ .eyes {
+	 position: relative;
+	 top: 32px;
+	 align-items: center;
+	 display: grid;
+	 flex-flow: row nowrap;
+	 grid-template-columns: repeat(2, 1fr);
+	 height: 32px;
+	 width: 100%;
+}
+ .eye {
+	 align-items: center;
+	 background-color: #fff;
+	 height: 24px;
+	 width: 24px;
+	 display: flex;
+	 margin: auto;
+}
+ .eye::before {
+	 position: relative;
+	 top: 1px;
+	 align-items: center;
+	 color: #739c46;
+	 content: "\2716";
+	 display: flex;
+	 height: 100%;
+	 font-size: 12px;
+	 justify-content: center;
+	 width: 100%;
+}
+ .mouth {
+	 position: absolute;
+	 right: 30px;
+	 bottom: 15px;
+	 border-radius: 5px;
+	 border: 2px solid #446b4f;
+	 width: 20px;
+}
+ .body-frame {
+	 clip-path: polygon(51.14% -128.41%, 102.28% 34.59%, 86.55% 77.27%, 8.9% 77.27%, 0% 38%);
+	 height: 88px;
+	 width: 88px;
+	 margin: auto;
+	 position: relative;
+	 z-index: 4;
+}
+ .arm {
+	 position: absolute;
+	 top: 118px;
+	 right: 0;
+	 left: 0;
+	 background-color: #678c44;
+	 margin: auto;
+	 width: 16px;
+	 height: 50px;
+	 z-index: 5;
+}
+ .arm.left {
+	 left: -45px;
+	 transform: rotate(160deg);
+	 border-top-right-radius: 15px;
+	 border-bottom-right-radius: 15px;
+	 border-bottom-left-radius: 30px;
+	 border-top-left-radius: 30px;
+	 border-bottom-color: transparent;
+}
+ .arm.right {
+	 right: -45px;
+	 box-shadow: inset 8px -2px 3px -4px rgba(166, 214, 140, 0.9);
+	 border-top-right-radius: 30px;
+	 border-bottom-left-radius: 15px;
+	 border-bottom-right-radius: 30px;
+	 border-top-left-radius: 15px;
+	 transform: rotate(-155deg);
+	 border-bottom-color: transparent;
+}
+ .arm span {
+	 position: absolute;
+	 bottom: 24px;
+	 height: 6px;
+	 width: 100%;
+}
+ .chest {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 clip-path: polygon(54.55% 29.17%, 93.18% 28.61%, 85.23% 101.39%, 20.45% 102.78%, 1.13% 32.78%);
+	 height: 72px;
+	 width: 100%;
+	 z-index: 5;
+}
+ .shell {
+	 position: absolute;
+	 top: 20px;
+	 background-color: #ffdd40;
+	 border-radius: 100%;
+	 display: grid;
+	 grid-template-columns: repeat(2, 1fr);
+	 grid-template-rows: repeat(2, 1fr);
+	 height: 50px;
+	 width: 100%;
+}
+ .shell span {
+	 border-width: 0 4px;
+	 border-style: solid;
+	 border-color: #996326;
+	 overflow: hidden;
+}
+ .shell span:nth-of-type(1), .shell span:nth-of-type(2) {
+	 border-bottom: 4px solid #996326;
+}
+ .shell span:nth-of-type(3), .shell span:nth-of-type(4) {
+	 border-top: 4px solid #996326;
+}
+ .half-shell {
+	 position: absolute;
+	 top: 90px;
+	 right: 0;
+	 left: 0;
+	 background: #953;
+	 clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+	 width: 90px;
+	 height: 90px;
+	 margin: auto;
+	 z-index: 3;
+}
+ .belt {
+	 position: absolute;
+	 top: 36px;
+	 left: 0;
+	 background-color: #996326;
+	 height: 12px;
+	 width: 100%;
+	 z-index: 10;
+}
+ .belt::before {
+	 position: absolute;
+	 top: -1px;
+	 right: 0;
+	 left: 0;
+	 align-items: center;
+	 background-color: #c7c9d3;
+	 box-shadow: 0px 0px 6px 6px rgba(30, 31, 38, 0.25);
+	 box-shadow: inset 0px 0px 3px 0px rgba(30, 31, 38, 0.25);
+	 content: "";
+	 color: #585858;
+	 display: flex;
+	 text-align: center;
+	 font-size: 12px;
+	 font-weight: 900;
+	 width: 15px;
+	 height: 15px;
+	 border-radius: 50%;
+	 justify-content: center;
+	 margin: auto;
+}
+ .leg {
+	 position: absolute;
+	 right: 0;
+	 bottom: -11px;
+	 left: 0;
+	 margin: 0 auto;
+	 width: 20px;
+}
+ .leg.left {
+	 left: -24px;
+}
+ .leg.left .inside-leg {
+	 box-shadow: inset 18px 1px 6px 0px rgba(30, 31, 38, 0.25);
+}
+ .leg.right {
+	 right: -24px;
+}
+ .leg.right .inside-leg {
+	 box-shadow: inset -8px 1px 4px -4px rgba(166, 214, 140, 0.69);
+}
+ .leg > div {
+	 border-radius: 0 10% 85% 40Array/0Array 50% 15% 15%;
+}
+ .inside-leg {
+	 background-color: #678c44;
+	 height: 32px;
+	 width: 100%;
+}
+ .stick {
+	 position: absolute;
+	 top: 154px;
+	 right: 0;
+	 left: 0;
+	 width: 140px;
+	 height: 10px;
+	 background-image: linear-gradient(to top, #c79081 0%, #714934 100%);
+	 border-radius: 6px;
+	 border: 2px solid #90583a;
+	 transform: rotate(55deg);
+	 margin: auto;
+	 z-index: 5;
+}
+ .stick::after {
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 left: 0;
+	 content: "";
+	 height: 100%;
+	 margin: auto;
+	 width: 25%;
+	 background-image: linear-gradient(to bottom, #fff 0%, #ffcdc0 100%);
+}
+ .sword-wrap {
+	 position: absolute;
+	 top: 150px;
+	 right: 0;
+	 left: 0;
+	 height: 80px;
+	 margin: auto;
+	 position: absolute;
+	 width: 20px;
+	 z-index: 10;
+}
+ .sword-wrap::after {
+	 position: absolute;
+	 bottom: -2px;
+	 left: 2px;
+	 content: "";
+	 border: 0 solid transparent;
+	 border-left-width: 8px;
+	 border-right-width: 8px;
+	 border-top: 8px solid #b9b9b9;
+}
+ .sword {
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 left: 0;
+	 background-color: #d2d2d2;
+	 border-bottom: 1px groove #d2d2d2;
+	 border-top-left-radius: 5px;
+	 border-top-right-radius: 5px;
+	 height: 75px;
+	 margin: auto;
+	 width: 15px;
+	 z-index: 10;
+}
+ .sword::before {
+	 position: absolute;
+	 left: 0;
+	 background: #c5c5c5;
+	 border-right: 1px groove #d2d2d2;
+	 content: "";
+	 height: 100%;
+	 width: 49.5%;
+}
+ .sword::after {
+	 position: absolute;
+	 top: -6px;
+	 right: 0;
+	 left: 0;
+	 content: "";
+	 background-color: #48a0da;
+	 border-top-left-radius: 10px;
+	 border-top-right-radius: 10px;
+	 height: 40%;
+	 margin: auto;
+	 position: absolute;
+	 width: 100%;
+}
+ .sword-handle {
+	 position: absolute;
+	 top: 3px;
+	 left: -4px;
+	 background-color: #d2d2d2;
+	 height: 7px;
+	 width: 28px;
+	 z-index: 20;
+}
+ .dagger {
+	 position: absolute;
+	 top: 100px;
+	 right: 0;
+	 left: -15px;
+	 display: grid;
+	 grid-template-columns: repeat(3, 1fr);
+	 grid-gap: 4px;
+	 height: 24px;
+	 width: 40px;
+	 z-index: 5;
+}
+ .dagger.is-left {
+	 position: absolute;
+	 top: 100px;
+	 right: 0;
+	 left: -15px;
+}
+ .dagger.is-right {
+	 position: absolute;
+	 top: 130px;
+	 right: 0;
+	 left: 155px;
+	 transform: rotate(-275deg);
+}
+ .dagger div {
+	 background-color: #d2d2d2;
+	 border-top-right-radius: 50%;
+	 border-top-left-radius: 50%;
+	 box-shadow: -8px 0 0 0 rgba(110, 110, 110, 0.5) inset;
+}
+ .dagger div:nth-of-type(odd) {
+	 height: 50%;
+	 margin-top: auto;
+}
+ .dagger .dagger-handle {
+	 position: absolute;
+	 bottom: -6px;
+	 left: 0;
+	 background-color: #9f9f9f;
+	 box-shadow: -8px 0 0 0 rgba(110, 110, 110, 0.5) inset;
+	 grid-column: -1;
+	 height: 6px;
+	 width: 100%;
+}
+ .dagger .dagger-handle::after {
+	 position: absolute;
+	 top: 10px;
+	 right: 0;
+	 bottom: 0;
+	 left: -40px;
+	 margin: auto;
+	 content: '';
+	 height: 18px;
+	 width: 9px;
+	 background: #d48784;
+	 z-index: 10;
+}
+
+ .don .turtle {
+	 transform-style: preserve-3d;
+}
+
+ .don .bandana {
+	 background-color: #8f5f9c;
+}
+ .don .arm.left {
+	 left: -42px;
+	 transform: rotate(145deg);
+	 top: 123px;
+	 border-bottom-left-radius: 0;
+}
+ .don .arm.right {
+	 border-top-right-radius: 0;
+	 border-bottom-right-radius: 0;
+	 right: -44px;
+	 transform: rotate(-145deg);
+	 top: 124px;
+}
+ .don .arm span {
+	 background: #8f5f9c;
+}
+ .don .belt::before {
+	 content: "D";
+}
+
+ .leo .bandana {
+	 background-color: #48a0da;
+}
+ .leo .eye::before {
+	 content: "\2688";
+}
+ .leo .arm.left {
+	 transform: rotate(135deg);
+}
+ .leo .arm.right {
+	 transform: rotate(-135deg);
+}
+ .leo .arm span {
+	 background: #48a0da;
+}
+ .leo .belt::before {
+	 content: "L";
+}
+
+ .mic .bandana {
+	 background-color: #ef8b46;
+}
+ .mic .arm span {
+	 background: #ef8b46;
+}
+ .mic .belt::before {
+	 content: "M";
+}
+
+
+ .raph .turtle {
+	 transform-style: preserve-3d;
+	 transform: perspective(1000px) rotateY(0deg);
+}
+ .raph .bandana {
+	 background-color: #8d3532;
+}
+ .raph .arm span {
+	 background: #8d3532;
+}
+ .raph .arm.left {
+	 transform: rotate(250deg);
+	 left: -105px;
+	 top: 115px;
+}
+ .raph .arm.right {
+	 transform: rotate(-250deg);
+	 left: 60px;
+	 top: 115px;
+}
+ .raph .belt::before {
+	 content: "R";
+}
+
+.head.shake {
+	animation: headShake 1s infinite ease-in-out;
+}
+
+.mouth.shake {
+	animation: singSong 0.5s infinite ease-in-out;
+}
+
+.leg.left.shake {
+	animation: legMove 1s 0.5s infinite ease-in-out;
+}
+
+.leg.right.shake {
+	animation: legMove 1s infinite ease-in-out;
+}
+
+.sword-wrap.shake {
+	animation: swordRotate 1s infinite ease-in-out;
+}
+
+.arm.right.shake {
+	animation: armRotate 1s 0.5s infinite ease-in-out;
+}
+
+.dagger.is-right.shake {
+	animation: daggerRotate 1s 0.5s infinite ease-in-out;
+}
+
+.dagger.is-left.shake {
+	animation: daggerRotateLeft 1s infinite ease-in-out;
+}
+
+.arm.left.shake {
+	animation: armRotate 1s infinite ease-in-out;
+}
+
+.stick.shake {
+	animation: stickRotate 1s infinite ease-in-out;
+}
+
+@keyframes headShake {
+	from {transform: translateX(3px);}
+	50% {transform: translateX(-3px);}
+	to {transform: translateX(3px);}
+}
+
+@keyframes singSong {
+	from {border: 2px solid #446b4f;}
+	50% {border: 5px solid #446b4f;}
+	to {border: 2px solid #446b4f;}
+}
+
+@keyframes legMove {
+	from {bottom: -11px;}
+	50% {bottom: -16px;}
+	to {bottom: -11px;}
+}
+
+@keyframes swordRotate {
+	from {transform: rotate(5deg);}
+	50% {transform: rotate(-5deg);}
+	to {transform: rotate(5deg);}
+}
+
+@keyframes armRotate {
+	from {top: 118px;}
+	50% {top: 124px;}
+	to {top: 118px;}
+}
+
+@keyframes daggerRotate {
+	from {top: 133px;}
+	50% {top: 140px;}
+	to {top: 133px;}
+}
+
+@keyframes daggerRotateLeft {
+	from {top: 105px;}
+	50% {top: 112px;}
+	to {top: 105px;}
+}
+
+@keyframes stickRotate {
+	from {transform: rotate(55deg);}
+	50% {transform: rotate(-40deg);}
+	to {transform: rotate(55deg);}
+}
+
+
+
+
+ 
